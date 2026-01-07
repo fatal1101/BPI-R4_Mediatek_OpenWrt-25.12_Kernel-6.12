@@ -46,7 +46,7 @@ u-boot-tools dos2unix
 > 
 > Current issue with SFP+ not working correctly.
 > 
-> TX transmit power isn't showing correctly in luci.
+> WiFi6 TX transmit power not showing correctly in luci.
 
 ## **Notes**
 
