@@ -8,6 +8,8 @@ Script to Build (Openwrt 25.12/kernel 6.12) with the mtk-openwrt-feeds...
 
 2. If you want to target a specific commit use the full commit hash e.g... OPENWRT_COMMIT="2acfd9f8ab12e4f353a0aa644d9adf89588b1f0f"
 
+3. Error Checks - All scripts and patches will be auto chacked with dos2unix and corrected if needed if they are not in the correct EOL format.
+
 ## Compile Environment Requirement
 
 - Minimum requirement: Ubuntu 22.04
@@ -29,9 +31,6 @@ u-boot-tools dos2unix
 Please note - this build is for testing the Alpha Release which may contain bugs. If you want stability use Openwrt 24.10 instead.
 
 ## **Notes**
-
-
-This script uses dos2unix to check any custom files and patches to make sure they are in used for EOL conversion
 
 To adjust the tx power values you also need to add sku_idx '0' to your wireless config
 ```
