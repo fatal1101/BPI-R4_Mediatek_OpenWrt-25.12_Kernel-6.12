@@ -43,6 +43,8 @@ u-boot-tools dos2unix
 ## **Filogic 880/850 WiFi7 4.3 Alpha Release (2025-12-31)**
 > [!WARNING]
 >This build is for testing the Alpha Release which may contain bugs so if you want stability please use Openwrt 24.10 instead.
+> Current issue with SFP+ not working correctly.
+> TX transmit power isn't showing correctly in luci.
 
 ## **Notes**
 
