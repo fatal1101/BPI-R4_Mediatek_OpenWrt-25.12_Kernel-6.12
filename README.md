@@ -1,7 +1,7 @@
 # BPI-R4 Mediatek (OpenWrt 25.12/Kernel 6.12)
 
 Script to Build (Openwrt 25.12/kernel 6.12) with the mtk-openwrt-feeds...
----
+
 ## **To build with the Mediatek (OpenWrt 25.12/Kernel 6.12)**
 
 1. If you want to build with the latest openwrt-25.12/kernels 6.12 and the latest mtk commits leave both OPENWRT_COMMIT="" & MTK_FEEDS_COMMIT="" empty.
