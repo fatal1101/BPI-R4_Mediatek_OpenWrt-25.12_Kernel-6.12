@@ -42,15 +42,30 @@ u-boot-tools dos2unix
 
 ## **Filogic 880/850 WiFi7 4.3 Alpha Release (2025-12-31)**
 > [!WARNING]
->This build is for testing the Alpha Release which may contain bugs so if you want stability please use Openwrt 24.10 instead.
-> 
+> This build is for testing the Alpha Release which may contain bugs so if you want stability please use Openwrt 24.10 instead.
+>
+# $$\color{blue}\large{\textbf{Troubleshooting\ Build\ Errors}$$
+
+If you encounter errors during compilation, they are often caused by recent patches released by MediaTek (this is less common with OpenWrt patches).
+
+To resolve this, you have two options:
+
+** 1. Pin a specific commit:** Identify the last working commit before the update that broke the build. Change the MTK_FEEDS_COMMIT variable to that specific hash.
+
+- **Change:** 'readonly MTK_FEEDS_COMMIT=""'
+
+- ** To:** readonly 'MTK_FEEDS_COMMIT="5dcc2867b180400f93664d6ed343d32b1ce06428"'
+
+** 2. Wait for a fix:** Wait for MediaTek to release a subsequent patch that resolves the issue.
+
+To check MediaTek patches releases - https://git01.mediatek.com/plugins/gitiles/openwrt/feeds/mtk-openwrt-feeds/+log
+
+> [!NOTE]
 > Currently no bananapi_bpi-r4-sdcard.img.gz is created with this build. MediaTek's new boot flow (using FIP/U-Boot 2024.x) which relies heavily on the FIT images (.itb) for both recovery and system upgrade, effectively deprecating the old "raw SD card image" method for this specific branch. If you haven't updated to MediaTek's u-boot then you will need to force update using "openwrt-mediatek-filogic-bananapi_bpi-r4-squashfs-sysupgrade.itb" to upgrade.
 <img width="597" height="540" alt="force update" src="https://github.com/user-attachments/assets/2af6f8fa-2f30-4421-be0e-2415ea2268c2" />
 <img width="597" height="483" alt="overview_1" src="https://github.com/user-attachments/assets/d9ce8dbe-ac29-4b96-87ba-4aba9c1a6fd1" />
 <img width="597" height="722" alt="overview_2" src="https://github.com/user-attachments/assets/0edd3a8e-f485-489f-96e8-c079ce0f9a3e" />
-
-## **Notes**
-> [!NOTE]
+>
 >Temp removing '999-ppe-29-netfilter-add-xfrm-offload.patch' and 3 other related patches to fix compile error 'struct dst_entry has no member named xfrm'. This patch tries to add code that accesses dst->xfrm. Since OpenWrt 25.12 (Kernel 6.12) has removed or currently refactored that member from the kernel structure, applying this patch breaks the networking stack compilation.
 >
 >To adjust the tx power values you also need to add sku_idx '0' to your wireless config
