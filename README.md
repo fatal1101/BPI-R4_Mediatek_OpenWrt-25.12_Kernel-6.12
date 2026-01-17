@@ -44,7 +44,7 @@ u-boot-tools dos2unix
 > [!WARNING]
 > This build is for testing the Alpha Release which may contain bugs so if you want stability please use Openwrt 24.10 instead.
 >
-# $$\color{blue}\large{\textbf{Troubleshooting\ Build\ Errors}$$
+## **Troubleshooting Build Errors**
 
 If you encounter errors during compilation, they are often caused by recent patches released by MediaTek (this is less common with OpenWrt patches).
 
