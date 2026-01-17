@@ -1,4 +1,4 @@
-# BPI-R4 Mediatek (OpenWrt 25.12/Kernel 6.12)
+# $$\color{blue}\Huge{\textbf{BPI-R4\ Mediatek\ (OpenWrt\ 25.12/Kernel\ 6.12)}}$$
 
 Script to Build (Openwrt 25.12/kernel 6.12) with the mtk-openwrt-feeds...
 
@@ -54,12 +54,13 @@ To resolve this, you have two options:
 
 - **Change:** `readonly MTK_FEEDS_COMMIT=""`
 
-- **To:** readonly `MTK_FEEDS_COMMIT="5dcc2867b180400f93664d6ed343d32b1ce06428"`
+- **To:** `readonly MTK_FEEDS_COMMIT="5dcc2867b180400f93664d6ed343d32b1ce06428"`
 
 **2. Wait for a fix:** Wait for MediaTek to release a subsequent patch that resolves the issue.
 
 To check MediaTek patches releases - https://git01.mediatek.com/plugins/gitiles/openwrt/feeds/mtk-openwrt-feeds/+log
 
+## **Notes**
 > [!NOTE]
 > Currently no bananapi_bpi-r4-sdcard.img.gz is created with this build. MediaTek's new boot flow (using FIP/U-Boot 2024.x) which relies heavily on the FIT images (.itb) for both recovery and system upgrade, effectively deprecating the old "raw SD card image" method for this specific branch. If you haven't updated to MediaTek's u-boot then you will need to force update using "openwrt-mediatek-filogic-bananapi_bpi-r4-squashfs-sysupgrade.itb" to upgrade.
 <img width="597" height="540" alt="force update" src="https://github.com/user-attachments/assets/2af6f8fa-2f30-4421-be0e-2415ea2268c2" />
