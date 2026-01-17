@@ -52,9 +52,9 @@ To resolve this, you have two options:
 
 ** 1. Pin a specific commit:** Identify the last working commit before the update that broke the build. Change the MTK_FEEDS_COMMIT variable to that specific hash.
 
-- **Change:** 'readonly MTK_FEEDS_COMMIT=""'
+- ** Change:** `readonly MTK_FEEDS_COMMIT=""`
 
-- ** To:** readonly 'MTK_FEEDS_COMMIT="5dcc2867b180400f93664d6ed343d32b1ce06428"'
+- ** To:** readonly `MTK_FEEDS_COMMIT="5dcc2867b180400f93664d6ed343d32b1ce06428"`
 
 ** 2. Wait for a fix:** Wait for MediaTek to release a subsequent patch that resolves the issue.
 
