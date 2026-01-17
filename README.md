@@ -1,4 +1,4 @@
-# $$\color{blue}\Huge{\textbf{BPI-R4\ Mediatek\ (OpenWrt\ 25.12/Kernel\ 6.12)}}$$
+# $$\color{blue}\large{\textbf{BPI-R4\ Mediatek\ (OpenWrt\ 25.12/Kernel\ 6.12)}}$$
 
 Script to Build (Openwrt 25.12/kernel 6.12) with the mtk-openwrt-feeds...
 
