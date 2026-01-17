@@ -1,2 +1,5 @@
 24.10/patches-feeds/108-strongswan-add-uci-support.patch
-
+autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-29-netfilter-add-xfrm-offload.patch
+autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-30-xt_FLOWOFFLOAD-add-xfrm-encap.patch
+autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-31-nft_flow_offload-add-xfrm-encap.patch
+autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-32-mtk_ppe-add-xfrm-hw-offload.patch
