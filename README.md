@@ -78,8 +78,8 @@ To check OpenWrt patches releases - https://git.openwrt.org/?p=openwrt/openwrt.g
 - Temp removing '999-ppe-29-netfilter-add-xfrm-offload.patch' and 3 other related patches to fix compile error 'struct dst_entry has no member named xfrm'. This patch tries to add code that accesses dst->xfrm. Since OpenWrt 25.12 (Kernel 6.12) has removed or currently refactored that member from the kernel structure, applying this patch breaks the networking stack compilation.
 
 - To adjust the tx power values you also need to add sku_idx '0' to your wireless config
-```csharp
-config wifi-device 'radio0'
-
- * option sku_idx '0'
-```
+     ```csharp
+     config wifi-device 'radio0'
+     
+         option sku_idx '0'
+     ```
