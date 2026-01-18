@@ -270,7 +270,7 @@ main() {
     log "--- Starting Full Autobuild (Prepare & Build) ---"
     (
         cd "$OPENWRT_DIR"
-        bash "../$MTK_FEEDS_DIR/autobuild/unified/autobuild.sh" "$BUILD_PROFILE" bootloader=1 log_file=make
+        bash "../$MTK_FEEDS_DIR/autobuild/unified/autobuild.sh" "$BUILD_PROFILE" filogic log_file=make
     )
 
     rename_release_images
