@@ -1,0 +1,58 @@
+From 321a43d7db12c29ea7a0a116b288932e223427c1 Mon Sep 17 00:00:00 2001
+Date: Sun, 18 Jan 2026 19:31:45 +1000
+Subject: [PATCH] bpi-r4-sdcard.img
+
+---
+ target/linux/mediatek/image/filogic.mk | 29 +++++++++++++++++++++++---
+ 1 file changed, 26 insertions(+), 3 deletions(-)
+
+diff --git a/target/linux/mediatek/image/filogic.mk b/target/linux/mediatek/image/filogic.mk
+index 65376ba..0c3159c 100644
+--- a/target/linux/mediatek/image/filogic.mk
++++ b/target/linux/mediatek/image/filogic.mk
+@@ -659,16 +659,39 @@ define Device/bananapi_bpi-r4-common
+   DEVICE_COMPAT_VERSION := 1.1
+   DEVICE_COMPAT_MESSAGE := The non-switch ports were renamed to match the board/case labels
+   KERNEL_LOADADDR := 0x46000000
++
++  ARTIFACTS := \
++	       emmc-gpt.bin emmc-preloader.bin emmc-bl31-uboot.fip \
++	       sdcard.img.gz \
++	       snand-preloader.bin snand-bl31-uboot.fip
++  ARTIFACT/emmc-gpt.bin		:= mt798x-gpt emmc
++  ARTIFACT/emmc-preloader.bin	:= mt7988-bl2 emmc-comb
++  ARTIFACT/emmc-bl31-uboot.fip	:= mt7988-bl31-uboot $$(DEVICE_NAME)-emmc
++  ARTIFACT/snand-preloader.bin	:= mt7988-bl2 spim-nand-ubi-comb
++  ARTIFACT/snand-bl31-uboot.fip	:= mt7988-bl31-uboot $$(DEVICE_NAME)-snand
++  ARTIFACT/sdcard.img.gz	:= mt798x-gpt sdmmc |\
++				   pad-to 17k | mt7988-bl2 sdmmc-comb |\
++				   pad-to 6656k | mt7988-bl31-uboot $$(DEVICE_NAME)-sdmmc |\
++				   pad-to 44M | mt7988-bl2 spim-nand-ubi-comb |\
++				   pad-to 45M | mt7988-bl31-uboot $$(DEVICE_NAME)-snand |\
++				   pad-to 51M | mt7988-bl2 emmc-comb |\
++				   pad-to 52M | mt7988-bl31-uboot $$(DEVICE_NAME)-emmc |\
++				   pad-to 56M | mt798x-gpt emmc |\
++				$(if $(CONFIG_TARGET_ROOTFS_SQUASHFS),\
++				   pad-to 64M | append-image squashfs-sysupgrade.itb | check-size |\
++				) \
++				  gzip
++
+   KERNEL := kernel-bin | gzip
+   KERNEL_INITRAMFS := kernel-bin | lzma | \
+ 	fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd | pad-to 64k
+   IMAGES := sysupgrade.itb
+   KERNEL_INITRAMFS_SUFFIX := -recovery.itb
+   KERNEL_IN_UBI := 1
+-  IMAGES := sysupgrade.itb
+   IMAGE/sysupgrade.itb := append-kernel | fit gzip $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb external-with-rootfs | pad-rootfs | append-metadata
+-ifeq ($(DUMP),)
+-  IMAGE_SIZE := $$(shell expr 64 + $$(CONFIG_TARGET_ROOTFS_PARTSIZE))m
++  
++  ifeq ($(DUMP),)
++    IMAGE_SIZE := $$(shell expr 64 + $$(CONFIG_TARGET_ROOTFS_PARTSIZE))m
+ endif
+ 
+ endef
+-- 
+2.43.0
+
