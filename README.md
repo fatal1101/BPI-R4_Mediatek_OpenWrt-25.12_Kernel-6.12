@@ -69,7 +69,7 @@ To check MediaTek patches releases - https://git01.mediatek.com/plugins/gitiles/
 
 To check OpenWrt patches releases - https://git.openwrt.org/?p=openwrt/openwrt.git;a=shortlog;h=refs/heads/openwrt-25.12
 
-# $$\color{blue}\large{\textbf{Notes}$$
+# $$\color{blue}\large{\textbf{Notes}}$$
 
 - 18.01.2026 - Add `bananapi_bpi-r4-sdcard.img.gz` to the build. All images can be found in the `openwrt/bin/targets/mediatek/filogic` folder.
 
