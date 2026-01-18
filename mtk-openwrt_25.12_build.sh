@@ -191,7 +191,6 @@ create_feed_revision() {
 
 rename_release_images() {
     local release_dir="$OPENWRT_DIR/autobuild_release"
-    log "--- Renaming Release Images (Removing Timestamps) ---"
     
     if [ ! -d "$release_dir" ]; then
         log "Warning: Release directory '$release_dir' not found. Renaming skipped."
@@ -201,13 +200,19 @@ rename_release_images() {
     find "$release_dir" -name "*bananapi_bpi-r4-squashfs-sysupgrade*.itb" -print0 | while IFS= read -r -d '' file; do
         local new_name="$release_dir/openwrt-mediatek-filogic-bananapi_bpi-r4-squashfs-sysupgrade.itb"
         mv "$file" "$new_name"
-        log "Renamed: $(basename "$file") -> $(basename "$new_name")"
+        log "autobuild_release: $(basename "$file") -> $(basename "$new_name")"
     done
 
     find "$release_dir" -name "*bananapi_bpi-r4-initramfs-recovery*.itb" -print0 | while IFS= read -r -d '' file; do
         local new_name="$release_dir/openwrt-mediatek-filogic-bananapi_bpi-r4-initramfs-recovery.itb"
         mv "$file" "$new_name"
-        log "Renamed: $(basename "$file") -> $(basename "$new_name")"
+        log "autobuild_release: $(basename "$file") -> $(basename "$new_name")"
+    done
+
+    find "$release_dir" -name "*openwrt-mediatek-filogic-bananapi_bpi-r4-sdcard.img*.gz" -print0 | while IFS= read -r -d '' file; do
+        local new_name="$release_dir/openwrt-mediatek-filogic-bananapi_bpi-r4-sdcard.img.gz"
+        mv "$file" "$new_name"
+        log "autobuild_release: $(basename "$file") -> $(basename "$new_name")"
     done
 }
 
