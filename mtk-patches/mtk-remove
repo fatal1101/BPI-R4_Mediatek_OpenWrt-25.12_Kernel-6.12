@@ -3,4 +3,3 @@ autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.1
 autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-30-xt_FLOWOFFLOAD-add-xfrm-encap.patch
 autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-31-nft_flow_offload-add-xfrm-encap.patch
 autobuild/unified/filogic/mac80211/25.12/files/target/linux/mediatek/patches-6.12/999-ppe-32-mtk_ppe-add-xfrm-hw-offload.patch
-autobuild/unified/filogic/mac80211/25.12/files/package/kernel/mac80211/patches/subsys/0001-backports-bump-to-wireless-next-2025-11-27-tag.patch
