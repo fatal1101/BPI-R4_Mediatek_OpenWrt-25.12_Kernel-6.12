@@ -1,3 +1,2 @@
 autobuild/unified/filogic/mac80211/25.12/files/package/kernel/mt76/patches/0138-mtk-mt76-eeprom-linked-fix.patch
-autobuild/unified/filogic/mac80211/25.12/files/package/kernel/mac80211/patches/subsys/0129-mtk-mac80211-fix-kernel-6.12.64.patch
 25.12/patches-base/1433-image-mediatek-filogic-add-bpi-r4-sdcard.img.gz.patch
