@@ -86,6 +86,13 @@ prepare_source_directory() {
     find "$source_dir" -type d -exec chmod 755 {} +
     find "$source_dir" -type f -exec chmod 644 {} +
 }
+configure_git_network() {
+    log "--- Tuning Git Network Settings ---"
+    git config --global http.postBuffer 524288000
+    git config --global http.lowSpeedLimit 0
+    git config --global http.lowSpeedTime 999999
+    log "Git buffers increased."
+}
 
 remove_files_from_list() {
     local list_file=$1
@@ -229,7 +236,7 @@ prompt_for_custom_build() {
 
 main() {
     check_dependencies
-    
+    configure_git_network
     openwrt_commit=$( [ -n "$OPENWRT_COMMIT" ] && echo "$OPENWRT_COMMIT" || get_latest_commit_hash "$OPENWRT_REPO" "$OPENWRT_BRANCH" )
     setup_repo "$OPENWRT_REPO" "$OPENWRT_BRANCH" "$openwrt_commit" "$OPENWRT_DIR" "OpenWrt"
     mtk_feeds_commit=$( [ -n "$MTK_FEEDS_COMMIT" ] && echo "$MTK_FEEDS_COMMIT" || get_latest_commit_hash "$MTK_FEEDS_REPO" "$MTK_FEEDS_BRANCH" )
