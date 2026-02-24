@@ -1,0 +1,31 @@
+From 03a4960c8b4b530eeaade87c7ccf227af577b673 Mon Sep 17 00:00:00 2001
+From: Gilly1970 <gilroyscott@hotmail.com>
+Date: Sun, 22 Feb 2026 02:19:43 +1000
+Subject: [PATCH] 99999_tx_power_check
+
+---
+ mt7996/eeprom.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/mt7996/eeprom.c b/mt7996/eeprom.c
+index e5fbfe7..54d6e6b 100644
+--- a/mt7996/eeprom.c
++++ b/mt7996/eeprom.c
+@@ -367,6 +367,14 @@ static int mt7996_eeprom_load(struct mt7996_dev *dev)
+ 				goto out;
+ 			}
+ 		}
++
++		/* New read tx_power values from fw */
++		u8 *eep = dev->mt76.eeprom.data;
++		if (!eep[MT_EE_TX0_POWER_2G] || !eep[MT_EE_TX0_POWER_5G] || !eep[MT_EE_TX0_POWER_6G]) {
++			dev_info(dev->mt76.dev, "Bad epprom detected, load default profile\n");
++			use_default = true;
++			goto out;
++		}
+ 	}
+ 
+ out:
+-- 
+2.43.0
+
