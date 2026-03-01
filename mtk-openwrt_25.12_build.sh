@@ -14,7 +14,7 @@ readonly OPENWRT_COMMIT=""
 readonly MTK_FEEDS_REPO="https://git01.mediatek.com/openwrt/feeds/mtk-openwrt-feeds"
 #readonly MTK_FEEDS_REPO="/home/user/repo/mtk-openwrt-feeds"
 readonly MTK_FEEDS_BRANCH="master"
-readonly MTK_FEEDS_COMMIT="26093b6d126807756472b7fec5d53951d353029b" 
+readonly MTK_FEEDS_COMMIT="" 
 
 # --- Directory Configuration ---
 readonly SOURCE_DEFAULT_CONFIG_DIR="config"
