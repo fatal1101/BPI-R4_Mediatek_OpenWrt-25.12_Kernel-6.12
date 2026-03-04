@@ -2,3 +2,4 @@
 25.12/patches-feeds/cryptsetup-01-add-host-build.patch
 25.12/patches-feeds/cryptsetup-02-remove-lvm2-dependency.patch
 25.12/patches-feeds/libaio-01-add-host-build.patch
+25.12/patches-feeds/lvm2-01-add-host-build.patch
