@@ -28,6 +28,7 @@ CONFIG_DEFAULT_f2fsck=y
 CONFIG_DEFAULT_firewall4=y
 CONFIG_DEFAULT_fitblk=y
 CONFIG_DEFAULT_fstools=y
+CONFIG_DEFAULT_kmod-nft-tproxy=y
 CONFIG_DEFAULT_kmod-crypto-hw-safexcel=y
 CONFIG_DEFAULT_kmod-eeprom-at24=y
 CONFIG_DEFAULT_kmod-gpio-button-hotplug=y
