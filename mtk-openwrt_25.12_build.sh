@@ -9,7 +9,7 @@ set -euo pipefail
 readonly OPENWRT_REPO="https://git.openwrt.org/openwrt/openwrt.git"
 #readonly OPENWRT_REPO="/home/user/repo/openwrt"
 readonly OPENWRT_BRANCH="openwrt-25.12"
-readonly OPENWRT_COMMIT="" 
+readonly OPENWRT_COMMIT="c2fe6ca16d0e6c9ec31da709d44263efdf12a3c1" 
 
 readonly MTK_FEEDS_REPO="https://git01.mediatek.com/openwrt/feeds/mtk-openwrt-feeds"
 #readonly MTK_FEEDS_REPO="/home/user/repo/mtk-openwrt-feeds"
